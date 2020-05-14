@@ -5,9 +5,16 @@
  */
 package main
 
-import "fmt"
+import (
+	"../../helpers"
+	"fmt"
+	"time"
+)
 
 func main() {
+
+	defer helpers.TimeTrack(time.Now(), "Fibo sum")
+
 	limit := 4000000
 	prev := 1
 	this := 1

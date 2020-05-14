@@ -5,10 +5,17 @@
 
 package main
 
+import (
+	"../../helpers"
+	"time"
+)
+
 var N = 600851475143
 var primes = make([]int, 0, 1000)
 
 func main() {
+
+	defer helpers.TimeTrack(time.Now(), "Prime factor")
 
 	primes = append(primes, 2)
 	for i := 2; i < N; i = nextPrime() {
