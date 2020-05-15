@@ -7,5 +7,5 @@ import (
 
 func TimeTrack(start time.Time, name string) {
 	elapsed := time.Since(start)
-	fmt.Printf("%s : %s", name, elapsed)
+	fmt.Printf("%s : %s\n", name, elapsed)
 }
