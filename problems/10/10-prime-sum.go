@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	defer helpers.TimeTrack(time.Now(), "Max prod")
+	defer helpers.TimeTrack(time.Now(), "Prime Sum")
 
 	primes := helpers.BasicPrimes(2000000)
 
