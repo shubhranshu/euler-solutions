@@ -109,6 +109,7 @@ package main
 
 import (
 	"../../helpers"
+	"strconv"
 	"time"
 )
 
@@ -219,11 +220,10 @@ func main() {
 	}
 
 	carry := 0
-	digitsToCalculate := 12
 	lenString := len(numList[0])
 	lenNumbers := len(numList)
-	result := make([]int, digitsToCalculate, digitsToCalculate)
-	for i := 0; i < digitsToCalculate; i++ {
+	result := ""
+	for i := 0; i < lenString; i++ {
 		rowSum := carry
 		pos := lenString - 1 - i
 		for i := 0; i < lenNumbers; i++ {
@@ -233,11 +233,11 @@ func main() {
 		}
 		lastDigit := rowSum % 10
 		carry = rowSum / 10
-		result[digitsToCalculate-i-1] = lastDigit
+
+		result = strconv.Itoa(lastDigit) + result
 	}
 
-	for _, num := range result {
-		print(num)
-	}
-	println()
+	result = strconv.Itoa(carry) + result
+
+	println(result)
 }
